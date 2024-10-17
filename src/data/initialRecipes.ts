@@ -13,7 +13,9 @@ export const initialRecipes: Recipe[] = [
             "Working quickly, stir in pasta and egg mixture, and gently toss to combine; season with salt and pepper, to taste. Add reserved pasta water, one tablespoon at a time, until desired consistency is reached.",
             "Serve immediately, garnished with parsley, if desired."
         ],
-        image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80"
+        image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80",
+        mealType: "Dinner",
+        rating: 5
     },
     {
         id: 2,
@@ -31,7 +33,9 @@ export const initialRecipes: Recipe[] = [
             "Season with salt to taste.",
             "Serve hot with rice or naan bread."
         ],
-        image: "https://images.unsplash.com/photo-1697155406127-76096502d69d?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        image: "https://images.unsplash.com/photo-1697155406127-76096502d69d?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        mealType: "Dinner",
+        rating: 5
     },
     {
         id: 3,
@@ -48,7 +52,9 @@ export const initialRecipes: Recipe[] = [
             "Drizzle with sesame oil and toss to combine.",
             "Serve hot as a side dish or over rice for a main course."
         ],
-        image: "https://images.unsplash.com/photo-1551326844-4df70f78d0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80"
+        image: "https://images.unsplash.com/photo-1551326844-4df70f78d0e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80",
+        mealType: "Dinner",
+        rating: 1
     },
     {
         id: 4,
@@ -64,7 +70,9 @@ export const initialRecipes: Recipe[] = [
             "Bake for about 10 minutes or until edges are nicely browned.",
             "Let cool on baking sheet for 5 minutes before transferring to a wire rack."
         ],
-        image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+        image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        mealType: "Dessert",
+        rating: 4
     },
     {
         id: 5,
@@ -79,6 +87,8 @@ export const initialRecipes: Recipe[] = [
             "Chill for at least 30 minutes before serving to allow flavors to meld.",
             "Serve cold and enjoy your refreshing Greek salad!"
         ],
-        image: "https://images.unsplash.com/photo-1561043433-aaf687c4cf04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+        image: "https://images.unsplash.com/photo-1561043433-aaf687c4cf04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        mealType: "Appetizer",
+        rating: 5
     }
 ];
