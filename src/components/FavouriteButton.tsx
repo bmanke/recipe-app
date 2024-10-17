@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
 
-const FavoriteButton: React.FC<{ recipeId: number }> = ({ recipeId }) => {
+const FavoriteButton: React.FC = () => {
     const [isFavorite, setIsFavorite] = useState(false);
 
     const toggleFavorite = () => {
