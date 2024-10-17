@@ -83,7 +83,7 @@ ${recipe.steps.map((step, index) => `${index + 1}. ${step}`).join('\n')}
                 <h3 className="text-lg font-semibold text-white mb-1">Steps:</h3>
                 <ol className="list-decimal list-inside mb-4 text-white">
                     {recipe.steps.map((step, index) => (
-                        <li key={index}>{step}</li>
+                        <li key={index} className="mb-1">{step}</li>
                     ))}
                 </ol>
 
