@@ -1,25 +1,31 @@
-import React, { useState } from 'react';
-import RecipeCard from './components/RecipeCard';
-import { Recipe } from './types';
+// src/App.tsx
 
-const initialRecipes: Recipe[] = [
-  {
-    id: 1,
-    name: "Spaghetti Carbonara",
-    ingredients: ["spaghetti", "eggs", "pecorino cheese", "guanciale", "black pepper"],
-    instructions: "Cook pasta. Mix eggs and cheese. Fry guanciale. Combine all ingredients."
-  },
-  {
-    id: 2,
-    name: "Chicken Curry",
-    ingredients: ["chicken", "curry powder", "coconut milk", "onions", "garlic"],
-    instructions: "Sauté onions and garlic. Add chicken and curry powder. Pour in coconut milk and simmer."
-  }
-];
+import React, { useState, useEffect } from 'react';
+import RecipeCard from './components/RecipeCard';
+import AddRecipeForm from './components/AddRecipeForm';
+import { Recipe } from './types';
+import { initialRecipes } from './data/initialRecipes';
 
 const App: React.FC = () => {
-  const [recipes] = useState<Recipe[]>(initialRecipes);
-  const [favorites, setFavorites] = useState<number[]>([]);
+  const [recipes, setRecipes] = useState<Recipe[]>(() => {
+    const storedRecipes = localStorage.getItem('recipes');
+    return storedRecipes ? JSON.parse(storedRecipes) : initialRecipes;
+  });
+
+  const [favorites, setFavorites] = useState<number[]>(() => {
+    const storedFavorites = localStorage.getItem('favorites');
+    return storedFavorites ? JSON.parse(storedFavorites) : [];
+  });
+
+  const [showAddForm, setShowAddForm] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('recipes', JSON.stringify(recipes));
+  }, [recipes]);
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
 
   const toggleFavorite = (id: number) => {
     setFavorites(prevFavorites =>
@@ -29,9 +35,29 @@ const App: React.FC = () => {
     );
   };
 
+  const addRecipe = (newRecipe: Omit<Recipe, 'id'>) => {
+    const id = Math.max(0, ...recipes.map(r => r.id)) + 1;
+    setRecipes(prevRecipes => [...prevRecipes, { ...newRecipe, id }]);
+    setShowAddForm(false);
+  };
+
+  const removeRecipe = (id: number) => {
+    setRecipes(prevRecipes => prevRecipes.filter(recipe => recipe.id !== id));
+    setFavorites(prevFavorites => prevFavorites.filter(favId => favId !== id));
+  };
+
+  console.log('Recipes:', recipes);
+
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Recipe App</h1>
+    <div className="container mx-auto p-4 bg-rose-100 min-h-screen">
+      <h1 className="text-3xl font-bold mb-4 text-rose-950">Recipe Tracker</h1>
+      <button
+        onClick={() => setShowAddForm(!showAddForm)}
+        className="mb-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-300"
+      >
+        {showAddForm ? 'Cancel' : 'Add New Recipe'}
+      </button>
+      {showAddForm && <AddRecipeForm onAddRecipe={addRecipe} />}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {recipes.map(recipe => (
           <RecipeCard
@@ -39,6 +65,7 @@ const App: React.FC = () => {
             recipe={recipe}
             isFavorite={favorites.includes(recipe.id)}
             onToggleFavorite={toggleFavorite}
+            onRemoveRecipe={removeRecipe}
           />
         ))}
       </div>
