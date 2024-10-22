@@ -3,7 +3,7 @@ import RecipeCard from './components/RecipeCard';
 import AddRecipeForm from './components/AddRecipeForm';
 import { Recipe } from './types';
 import { initialRecipes } from './data/initialRecipes';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaHeart } from 'react-icons/fa';
 
 const App: React.FC = () => {
   const [recipes, setRecipes] = useState<Recipe[]>(() => {
@@ -14,6 +14,7 @@ const App: React.FC = () => {
   const [showAddForm, setShowAddForm] = useState(false);
   const [filterMealType, setFilterMealType] = useState<string>('All');
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
   useEffect(() => {
     localStorage.setItem('recipes', JSON.stringify(recipes));
@@ -44,15 +45,15 @@ const App: React.FC = () => {
 
   const mealTypes = ['All', ...Array.from(new Set(recipes.map(recipe => recipe.mealType)))];
 
-  // Filter recipes by meal type and search term (only by name)
   const filteredRecipes = recipes
+    .filter(recipe => !showOnlyFavorites || favorites.includes(recipe.id))
     .filter(recipe => filterMealType === 'All' || recipe.mealType === filterMealType)
     .filter(recipe =>
       recipe.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
   return (
-    <div className="container mx-auto p-4 bg-rose-100 min-h-screen min-w-screen">
+    <div className="container mx-auto p-4 bg-rose-100 min-h-screen">
       <h1 className="text-3xl font-bold mb-4 text-rose-950">Recipe Tracker</h1>
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <button
@@ -60,6 +61,15 @@ const App: React.FC = () => {
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors duration-300"
         >
           {showAddForm ? 'Cancel' : 'Add New Recipe'}
+        </button>
+        <button
+          onClick={() => setShowOnlyFavorites(!showOnlyFavorites)}
+          className={`flex items-center gap-2 px-4 py-2 rounded transition-colors duration-300 ${showOnlyFavorites
+              ? 'bg-red-500 text-white hover:bg-red-600'
+              : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
+        >
+          <FaHeart /> {showOnlyFavorites ? 'Show All' : 'Show Favorites'}
         </button>
         <div className="flex-grow"></div>
         <div className="relative">
