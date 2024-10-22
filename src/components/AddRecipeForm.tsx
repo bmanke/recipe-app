@@ -8,39 +8,47 @@ interface Props {
 
 const AddRecipeForm: React.FC<Props> = ({ onAddRecipe }) => {
     const [name, setName] = useState('');
-    const [ingredients, setIngredients] = useState('');
+    const [ingredients, setIngredients] = useState<string[]>(['']);
     const [steps, setSteps] = useState<string[]>(['']);
     const [image, setImage] = useState('');
     const [mealType, setMealType] = useState('');
     const [rating, setRating] = useState(0);
 
-    const handleAddStep = () => {
-        setSteps([...steps, '']);
+    const handleAddItem = (setter: React.Dispatch<React.SetStateAction<string[]>>) => {
+        setter(prev => [...prev, '']);
     };
 
-    const handleStepChange = (index: number, value: string) => {
-        const newSteps = [...steps];
-        newSteps[index] = value;
-        setSteps(newSteps);
+    const handleItemChange = (
+        index: number,
+        value: string,
+        setter: React.Dispatch<React.SetStateAction<string[]>>
+    ) => {
+        setter(prev => {
+            const newItems = [...prev];
+            newItems[index] = value;
+            return newItems;
+        });
     };
 
-    const handleRemoveStep = (index: number) => {
-        const newSteps = steps.filter((_, i) => i !== index);
-        setSteps(newSteps);
+    const handleRemoveItem = (
+        index: number,
+        setter: React.Dispatch<React.SetStateAction<string[]>>
+    ) => {
+        setter(prev => prev.filter((_, i) => i !== index));
     };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         onAddRecipe({
             name,
-            ingredients: ingredients.split(',').map(i => i.trim()),
-            steps: steps.filter(step => step.trim() !== ''),
+            ingredients: ingredients.filter(item => item.trim() !== ''),
+            steps: steps.filter(item => item.trim() !== ''),
             image,
             mealType,
             rating
         });
         setName('');
-        setIngredients('');
+        setIngredients(['']);
         setSteps(['']);
         setImage('');
         setMealType('');
@@ -87,15 +95,33 @@ const AddRecipeForm: React.FC<Props> = ({ onAddRecipe }) => {
             </div>
 
             <div className="mb-2">
-                <label htmlFor="ingredients" className="block mb-1">Ingredients (comma-separated):</label>
-                <input
-                    type="text"
-                    id="ingredients"
-                    value={ingredients}
-                    onChange={(e) => setIngredients(e.target.value)}
-                    required
-                    className="w-full px-2 py-1 border rounded text-black"
-                />
+                <label className="block mb-1">Ingredients:</label>
+                {ingredients.map((ingredient, index) => (
+                    <div key={index} className="flex mb-2">
+                        <input
+                            type="text"
+                            value={ingredient}
+                            onChange={(e) => handleItemChange(index, e.target.value, setIngredients)}
+                            required
+                            className="flex-grow px-2 py-1 border rounded text-black"
+                            placeholder={`Ingredient ${index + 1}`}
+                        />
+                        <button
+                            type="button"
+                            onClick={() => handleRemoveItem(index, setIngredients)}
+                            className="ml-2 px-2 py-1 bg-red-500 text-white rounded"
+                        >
+                            Remove
+                        </button>
+                    </div>
+                ))}
+                <button
+                    type="button"
+                    onClick={() => handleAddItem(setIngredients)}
+                    className="px-2 py-1 bg-green-500 text-white rounded"
+                >
+                    Add Ingredient
+                </button>
             </div>
 
             <div className="mb-2">
@@ -105,14 +131,14 @@ const AddRecipeForm: React.FC<Props> = ({ onAddRecipe }) => {
                         <input
                             type="text"
                             value={step}
-                            onChange={(e) => handleStepChange(index, e.target.value)}
+                            onChange={(e) => handleItemChange(index, e.target.value, setSteps)}
                             required
                             className="flex-grow px-2 py-1 border rounded text-black"
                             placeholder={`Step ${index + 1}`}
                         />
                         <button
                             type="button"
-                            onClick={() => handleRemoveStep(index)}
+                            onClick={() => handleRemoveItem(index, setSteps)}
                             className="ml-2 px-2 py-1 bg-red-500 text-white rounded"
                         >
                             Remove
@@ -121,7 +147,7 @@ const AddRecipeForm: React.FC<Props> = ({ onAddRecipe }) => {
                 ))}
                 <button
                     type="button"
-                    onClick={handleAddStep}
+                    onClick={() => handleAddItem(setSteps)}
                     className="px-2 py-1 bg-green-500 text-white rounded"
                 >
                     Add Step
