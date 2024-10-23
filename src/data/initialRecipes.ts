@@ -79,7 +79,7 @@ export const initialRecipes: Recipe[] = [
     },
     {
     id: 6,
-        name: "Greek Salad",
+        name: "Ron's AI-Wizard Chocolate Chip Spice Cake",
         ingredients: ["¼ cup extra-virgin olive oil", "3 tablespoons red wine vinegar", "1 garlic clove, minced", "½ teaspoon dried oregano, more for sprinkling", "¼ teaspoon Dijon mustard", "¼ teaspoon sea salt", "Freshly ground black pepper", "1 English cucumber, cut lengthwise, seeded, and sliced ¼-inch thick", "1 green bell pepper, chopped into 1-inch pieces", "2 cups halved cherry tomatoes", "5 ounces feta cheese, cut into ½ inch cubes*", "⅓ cup thinly sliced red onion", "⅓ cup pitted Kalamata olives", "⅓ cup fresh mint leaves"],
         steps: [
             "Make the dressing: In a small bowl, whisk together the olive oil, vinegar, garlic, oregano, mustard, salt, and several grinds of pepper.",
