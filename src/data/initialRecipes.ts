@@ -80,12 +80,9 @@ export const initialRecipes: Recipe[] = [
     {
     id: 6,
         name: "Ron's AI-Wizard Chocolate Chip Spice Cake",
-        ingredients: ["2¾ cups all-purpose flour", "2 teaspoons baking powder", "½ teaspoon baking soda", "1½ teaspoons ground cinnamon", "1 teaspoon ground ginger", "½ teaspoon ground nutmeg", "¼ teaspoon ground cloves", "¼ teaspoon ground cardamom", "1 teaspoon salt", "¾ cup unsalted butter, softened", "½ cup vegetable oil", "1½ cups dark brown sugar, packed", "½ cup granulated sugar", "4 large eggs, room temperature", "2 teaspoons vanilla extract", "1¼ cups whole milk, room temperature", "½ cup apple sauce", "¼ cup maple syrup", "1½ cups semi-sweet chocolate chips", "2 tablespoons all-purpose flour (for coating chocolate chips)", "2 cups (4 sticks) unsalted butter", "6 cups powdered sugar, sifted", ""
-        ],
+        ingredients: ["2¾ cups all-purpose flour", "2 teaspoons baking powder", "½ teaspoon baking soda", "1½ teaspoons ground cinnamon", "1 teaspoon ground ginger", "½ teaspoon ground nutmeg", "¼ teaspoon ground cloves", "¼ teaspoon ground cardamom", "1 teaspoon salt", "¾ cup unsalted butter, softened", "½ cup vegetable oil", "1½ cups dark brown sugar, packed", "½ cup granulated sugar", "4 large eggs, room temperature", "2 teaspoons vanilla extract", "1¼ cups whole milk, room temperature", "½ cup apple sauce", "¼ cup maple syrup", "1½ cups semi-sweet chocolate chips", "2 tablespoons all-purpose flour (for coating chocolate chips)", "2 cups (4 sticks) unsalted butter", "6 cups powdered sugar, sifted", "2 tablespoons vanilla extract", "¼ cup heavy cream", "½ teaspoon salt", "Additional chocolate chips for garnish" ],
         steps: [
-            "Make the dressing: In a small bowl, whisk together the olive oil, vinegar, garlic, oregano, mustard, salt, and several grinds of pepper.",
-            "On a large platter, arrange the cucumber, green pepper, cherry tomatoes, feta cheese, red onions, and olives. Drizzle with the dressing and very gently toss. Sprinkle with a few generous pinches of oregano and top with the mint leaves. Season to taste and serve.",
-            "Serve cold and enjoy your refreshing Greek salad!"
+            
         ],
         image: "https://images.unsplash.com/photo-1561043433-aaf687c4cf04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
         mealType: "Appetizer",
