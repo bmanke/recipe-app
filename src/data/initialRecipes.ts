@@ -100,8 +100,8 @@ export const initialRecipes: Recipe[] = [
             "Frost entire cake",
             "Garnish with additional chocolate chips"
         ],
-        image: "https://images.unsplash.com/photo-1561043433-aaf687c4cf04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-        mealType: "Appetizer",
+        image: "https://scontent.fyxd2-1.fna.fbcdn.net/v/t39.30808-6/464190923_10162338058444439_6319982449226737433_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=BvnQEu8K__EQ7kNvgHOOGTQ&_nc_zt=23&_nc_ht=scontent.fyxd2-1.fna&_nc_gid=Ay0yqls_saW2h_9mcgOlxv3&oh=00_AYBwu1cS2-f17fN9q4VMfAVEp2ldGFPNGGBRQBfSi2NiQg&oe=671E2C96",
+        mealType: "Desserts",
         rating: 5
     }
 ];
