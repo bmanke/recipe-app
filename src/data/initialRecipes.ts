@@ -85,7 +85,10 @@ export const initialRecipes: Recipe[] = [
             "Preheat oven to 350°F (175°C). Grease and flour two 9-inch cake pans, line bottoms with parchment paper.",
             "In a medium bowl, whisk together flour, baking powder, baking soda, cinnamon, ginger, nutmeg, cloves, cardamom, and salt.",
             "In a separate bowl, toss chocolate chips with 2 tablespoons flour to prevent sinking.",
-            ""
+            "Using a stand mixer with paddle attachment: Beat butter until creamy (2 minutes), Add vegetable oil and beat until combined, Add both sugars, beat until light and fluffy (4-5 minutes), Add eggs one at a time, beating well after each, Beat in vanilla extract and maple syrup",
+            "Combine milk and apple sauce in a measuring cup, whisk until smooth.",
+            "Gradually alternate adding dry ingredients and milk mixture to butter mixture: Begin and end with dry ingredients (three additions of dry, two of wet), Mix on low speed until just combined, Fold in flour-coated chocolate chips by hand",
+            
         ],
         image: "https://images.unsplash.com/photo-1561043433-aaf687c4cf04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
         mealType: "Appetizer",
