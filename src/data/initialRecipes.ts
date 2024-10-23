@@ -88,7 +88,17 @@ export const initialRecipes: Recipe[] = [
             "Using a stand mixer with paddle attachment: Beat butter until creamy (2 minutes), Add vegetable oil and beat until combined, Add both sugars, beat until light and fluffy (4-5 minutes), Add eggs one at a time, beating well after each, Beat in vanilla extract and maple syrup",
             "Combine milk and apple sauce in a measuring cup, whisk until smooth.",
             "Gradually alternate adding dry ingredients and milk mixture to butter mixture: Begin and end with dry ingredients (three additions of dry, two of wet), Mix on low speed until just combined, Fold in flour-coated chocolate chips by hand",
-            
+            "Divide batter between prepared pans.",
+            "Bake 30-35 minutes or until a toothpick comes out clean.",
+            "Cool in pans for 10 minutes, then remove and cool completely on wire racks.",
+            "Brown the butter: Place butter in a light-colored saucepan over medium heat, Cook, stirring constantly, until butter turns golden brown and smells nutty (about 8-10 minutes), Pour into a heatproof bowl, including the browned bits, Refrigerate until solid but still soft (about 1 hour)",
+            "Make the frosting: Beat cooled brown butter until creamy (3-4 minutes), Gradually add sifted powdered sugar, one cup at a time, Add vanilla extract, Add heavy cream gradually until desired consistency is reached, Beat until light and fluffy (5-6 minutes), Mix in salt",
+            "Level cake layers if needed",
+            "Place first layer on cake stand",
+            "Spread 1 cup frosting",
+            "Add second layer",
+            "Frost entire cake",
+            "Garnish with additional chocolate chips"
         ],
         image: "https://images.unsplash.com/photo-1561043433-aaf687c4cf04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
         mealType: "Appetizer",
