@@ -102,6 +102,6 @@ export const initialRecipes: Recipe[] = [
         ],
         image: "https://scontent.fyxd2-1.fna.fbcdn.net/v/t39.30808-6/464190923_10162338058444439_6319982449226737433_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=BvnQEu8K__EQ7kNvgHOOGTQ&_nc_zt=23&_nc_ht=scontent.fyxd2-1.fna&_nc_gid=Ay0yqls_saW2h_9mcgOlxv3&oh=00_AYBwu1cS2-f17fN9q4VMfAVEp2ldGFPNGGBRQBfSi2NiQg&oe=671E2C96",
         mealType: "Desserts",
-        rating: 5
+        rating: 1
     }
 ];
