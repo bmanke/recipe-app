@@ -82,7 +82,10 @@ export const initialRecipes: Recipe[] = [
         name: "Ron's AI-Wizard Chocolate Chip Spice Cake",
         ingredients: ["2¾ cups all-purpose flour", "2 teaspoons baking powder", "½ teaspoon baking soda", "1½ teaspoons ground cinnamon", "1 teaspoon ground ginger", "½ teaspoon ground nutmeg", "¼ teaspoon ground cloves", "¼ teaspoon ground cardamom", "1 teaspoon salt", "¾ cup unsalted butter, softened", "½ cup vegetable oil", "1½ cups dark brown sugar, packed", "½ cup granulated sugar", "4 large eggs, room temperature", "2 teaspoons vanilla extract", "1¼ cups whole milk, room temperature", "½ cup apple sauce", "¼ cup maple syrup", "1½ cups semi-sweet chocolate chips", "2 tablespoons all-purpose flour (for coating chocolate chips)", "2 cups (4 sticks) unsalted butter", "6 cups powdered sugar, sifted", "2 tablespoons vanilla extract", "¼ cup heavy cream", "½ teaspoon salt", "Additional chocolate chips for garnish" ],
         steps: [
-            
+            "Preheat oven to 350°F (175°C). Grease and flour two 9-inch cake pans, line bottoms with parchment paper.",
+            "In a medium bowl, whisk together flour, baking powder, baking soda, cinnamon, ginger, nutmeg, cloves, cardamom, and salt.",
+            "In a separate bowl, toss chocolate chips with 2 tablespoons flour to prevent sinking.",
+            ""
         ],
         image: "https://images.unsplash.com/photo-1561043433-aaf687c4cf04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
         mealType: "Appetizer",
